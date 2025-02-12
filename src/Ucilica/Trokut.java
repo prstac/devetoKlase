@@ -1,12 +1,12 @@
 package Ucilica;
 
-public class Trokut {
-    private int a;
-    private int b;
-    private int c;
+public class Trokut implements IGeometrijskiLik {
+    private double a;
+    private double b;
+    private double c;
     private String naziv = "Trokut";
 
-    public Trokut(String naziv, int a, int b, int c) {
+    public Trokut(String naziv, double a, double b, double c) {
         this.a = a;
         this.b = b;
         this.c = c;

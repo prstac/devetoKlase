@@ -17,11 +17,11 @@ ZADATAK 1 - 12.2.2025
 
 Na osnovu opisa projektnog zadatka, pripremite i implementirajte potrebne klase za trokut, krug i pravokutnik.
  */
-public class Krug {
+public class Krug  implements IGeometrijskiLik {
     private String naziv = "Krug";
-    private int radijus;
+    private double radijus;
 
-    public Krug(String naziv, int radijus) {
+    public Krug(String naziv, double radijus) {
         this.radijus = radijus;
         this.naziv = naziv;
     }

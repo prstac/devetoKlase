@@ -1,11 +1,11 @@
 package Ucilica;
 
-public class Pravokutnik {
-    private int a;
-    private int b;
+public class Pravokutnik implements IGeometrijskiLik {
+    private double a;
+    private double b;
     private String naziv = "Pravokutnik";
 
-    public Pravokutnik(String naziv, int b, int a) {
+    public Pravokutnik(String naziv, double b, double a) {
         this.b = b;
         this.a = a;
         this.naziv = naziv;
