@@ -5,9 +5,10 @@ public class Pravokutnik {
     private int b;
     private String naziv = "Pravokutnik";
 
-    public Pravokutnik(int b, int a) {
+    public Pravokutnik(String naziv, int b, int a) {
         this.b = b;
         this.a = a;
+        this.naziv = naziv;
     }
 
     public double povrsina() {

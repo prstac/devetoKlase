@@ -21,8 +21,9 @@ public class Krug {
     private String naziv = "Krug";
     private int radijus;
 
-    public Krug(int radijus) {
+    public Krug(String naziv, int radijus) {
         this.radijus = radijus;
+        this.naziv = naziv;
     }
 
     public double povrsina() {

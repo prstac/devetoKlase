@@ -6,10 +6,11 @@ public class Trokut {
     private int c;
     private String naziv = "Trokut";
 
-    public Trokut(int a, int b, int c) {
+    public Trokut(String naziv, int a, int b, int c) {
         this.a = a;
         this.b = b;
         this.c = c;
+        this.naziv = naziv;
     }
 
     public double povrsina() {
