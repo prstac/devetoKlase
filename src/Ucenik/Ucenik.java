@@ -14,8 +14,8 @@ public class Ucenik {
     public void ucenikInfo() {
         String header =
                 String.format("|%-20s|",ime) +
-                        String.format("%-10s|",brojGodina) +
-                        String.format("%-10s|", prosjek());
+                        String.format("%10s|", brojGodina) +
+                        String.format("%10s|", String.format("%.2f", prosjek()));
         System.out.println(header);
 
         //System.out.println("Ime: " + ime + " Dob: " + brojGodina + " prosjek: " + prosjek());

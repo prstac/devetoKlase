@@ -1,5 +1,7 @@
 package Ucenik;
 
+import Imena.ImeFaker;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +13,29 @@ public class Skola {
         ucenici.add(ucenik1);
         ucenici.add(ucenik2);
 
+        for (int i = 0; i < 100; i++) {
+            ucenici.add(
+                    new Ucenik(
+                        ImeFaker.getRandomIme(),
+                        (int)(100*Math.random() + 1),
+                        getOcjene()
+                    )
+            );
+        }
+
         uceniciInfo();
+    }
+
+    public static int ocijeni() {
+        return (int)(Math.random()*5 +1);
+    }
+
+    public static int[] getOcjene() {
+        int[] ocjene = new int[3];
+        for (int i = 0; i <3; i++) {
+            ocjene[i] = ocijeni();
+        }
+        return ocjene;
     }
 
     public static void uceniciInfo() {
