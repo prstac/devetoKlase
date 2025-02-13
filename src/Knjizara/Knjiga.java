@@ -19,6 +19,6 @@ public class Knjiga {
     @Override
     public String toString() {
 
-        return String.format("%-30s|", naziv) + String.format("%-20s|",autor) + String.format("%-20s|", cijena);
+        return String.format("|%-30s|", naziv) + String.format("%-20s|",autor) + String.format("%20s|", cijena);
      }
 }
