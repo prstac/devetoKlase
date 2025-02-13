@@ -1,5 +1,7 @@
 package Knjizara;
 
+import Utils.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,15 +14,23 @@ public class Knjizara {
         knjige.add(knjiga2);
 
         predstaviKnjige();
+        centriraniNaslov();
     }
 
     public static void predstaviKnjige() {
-        String linija =
+        //System.out.println("|" + StringUtils.centerHeader("Naslov", 30) + "|" + StringUtils.centerHeader("Autor", 20) + "|" + StringUtils.centerHeader("Cijena",20) + "|");
+
+        String header =
                 String.format("|%-30s|","Naslov") +
                 String.format("%-20s|","Autor") +
                 String.format("%-20s|", "Cijena");
-        linija = String.join("_", linija.split(" ", -1));
-        System.out.println(linija);
+        header = String.join("_", header.split(" "));
+        System.out.println(header);
+
         knjige.forEach(knjiga -> System.out.println(knjiga));
+    }
+
+    public static void centriraniNaslov() {
+        System.out.println("|" + StringUtils.centerHeader("Naslov", 30) + "|" + StringUtils.centerHeader("Autor", 20) + "|" + StringUtils.centerHeader("Cijena",20) + "|");
     }
 }
