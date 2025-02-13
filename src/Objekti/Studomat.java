@@ -1,9 +1,11 @@
 package Objekti;
 
+import Imena.ImeFaker;
 import Utils.FindUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Studomat {
     public static List<Student> studenti= new ArrayList<>();
@@ -20,7 +22,6 @@ public class Studomat {
         dodajStudenta("Ante", "Antic");
 
         System.out.println(studenti.getFirst().getIme());
-        studenti.forEach(System.out::println);
 
         var student2 = FindUtils.findByProperty(studenti, s-> s.getBrojIndeksa() == 2);
 
@@ -31,6 +32,11 @@ public class Studomat {
             student2.dodajIspit("Kemija");
             student2.ispisiPrijavljeneIspite();
         }
+
+        for (int i = 0; i < 100; i++) {
+            dodajStudenta(ImeFaker.getRandomIme(), ImeFaker.getRandomPrezime());
+        }
+        studenti.forEach(System.out::println);
 
     }
 }
