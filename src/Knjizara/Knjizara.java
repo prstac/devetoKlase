@@ -15,6 +15,12 @@ public class Knjizara {
     }
 
     public static void predstaviKnjige() {
+        String linija =
+                String.format("%-30s|","Naslov") +
+                String.format("%-20s|","Autor") +
+                String.format("%-20s|", "Cijena");
+        linija = String.join("\u0332", linija.split(" ", -1));
+        System.out.println(linija);
         knjige.forEach(knjiga -> System.out.println(knjiga));
     }
 }
