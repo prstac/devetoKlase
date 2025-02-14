@@ -13,16 +13,17 @@ public class ImenaReader {
     public static List<String> prezimena = new ArrayList<>();
     private static boolean ucitano = false;
 
-    ImenaReader(){
-        if (ucitano) return;
-        ucitajSve();
-        ucitano = true;
+    static  {
+        if (!ucitano) {
+            ucitajSve();
+        }
     }
 
     private static void ucitajSve() {
         ucitajMuskaImena();
         ucitajZenskaImena();
         ucitajPrezimena();
+        ucitano = true;
     }
 
     private static void ucitajZenskaImena() {

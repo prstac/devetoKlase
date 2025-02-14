@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImeFaker {
-
-    private static ImenaReader imenaReader = new ImenaReader();
-
     public static void main(String[] args) {
         List<String> imena = new ArrayList<>();
 
@@ -15,7 +12,7 @@ public class ImeFaker {
             var prezime = getRandomPrezime();
             imena.add(ime + " " + prezime);
         }
-        imena.forEach(ime -> System.out.println(ime));
+        imena.forEach(System.out::println);
     }
 
     public static String getRandomIme() {
@@ -27,15 +24,15 @@ public class ImeFaker {
     }
 
     public static String getRandomMuskoIme() {
-        return imenaReader.muskaImena.get((int)Math.round(Math.random() * (imenaReader.muskaImena.size() - 1 ))).getNaziv();
+        return ImenaReader.muskaImena.get((int)Math.round(Math.random() * (ImenaReader.muskaImena.size() - 1 ))).getNaziv();
     }
 
     public static String getRandomZenskoIme() {
-        return imenaReader.zenskaImena.get((int)Math.round(Math.random() * (imenaReader.zenskaImena.size() - 1 ))).getNaziv();
+        return ImenaReader.zenskaImena.get((int)Math.round(Math.random() * (ImenaReader.zenskaImena.size() - 1 ))).getNaziv();
     }
 
     public static String getRandomPrezime() {
-        return imenaReader.prezimena.get((int)Math.round(Math.random() * (imenaReader.prezimena.size() - 1)));
+        return ImenaReader.prezimena.get((int)Math.round(Math.random() * (ImenaReader.prezimena.size() - 1)));
     }
 
 
