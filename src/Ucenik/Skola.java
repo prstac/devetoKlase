@@ -13,17 +13,20 @@ public class Skola {
         ucenici.add(ucenik1);
         ucenici.add(ucenik2);
 
-        for (int i = 0; i < 100; i++) {
+        upisiUcenike(100);
+        uceniciInfo();
+    }
+
+    private  static void upisiUcenike(int broj) {
+        for (int i = 0; i < broj; i++) {
             ucenici.add(
                     new Ucenik(
-                        ImeFaker.getRandomIme(),
-                        (int)(100*Math.random() + 1),
-                        getOcjene()
+                            ImeFaker.getRandomIme(),
+                            (int)(100*Math.random() + 1),
+                            getOcjene()
                     )
             );
         }
-
-        uceniciInfo();
     }
 
     public static int ocijeni() {
