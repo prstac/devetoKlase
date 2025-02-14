@@ -11,19 +11,15 @@ public class ImenaReader {
     public static List<Ime> zenskaImena = new ArrayList<>();
     public static List<Ime> muskaImena = new ArrayList<>();
     public static List<String> prezimena = new ArrayList<>();
-    private static boolean ucitano = false;
 
     static  {
-        if (!ucitano) {
-            ucitajSve();
-        }
+        ucitajSve();
     }
 
     private static void ucitajSve() {
         ucitajMuskaImena();
         ucitajZenskaImena();
         ucitajPrezimena();
-        ucitano = true;
     }
 
     private static void ucitajZenskaImena() {
