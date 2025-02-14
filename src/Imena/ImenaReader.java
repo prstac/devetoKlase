@@ -1,32 +1,42 @@
 package Imena;
 
-import Utils.StringUtils;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class ImenaReader {
-    public static List<Ime> imena = new ArrayList<>();
+    public static List<Ime> zenskaImena = new ArrayList<>();
+    public static List<Ime> muskaImena = new ArrayList<>();
     public static List<String> prezimena = new ArrayList<>();
+    private static boolean ucitano = false;
 
     ImenaReader(){
+        if (ucitano) return;
         ucitajSve();
+        ucitano = true;
     }
 
     private static void ucitajSve() {
-        ucitajImena();
+        ucitajMuskaImena();
+        ucitajZenskaImena();
         ucitajPrezimena();
     }
 
-    private static void ucitajImena() {
-        try {
-            File myObj = new File("./src/Imena/imena.txt");
+    private static void ucitajZenskaImena() {
+        zenskaImena = ucitajImena("./src/Imena/imenazenska.txt");
+    }
 
+    private static void ucitajMuskaImena() {
+        muskaImena = ucitajImena("./src/Imena/imena.txt");
+    }
+
+    private static List<Ime> ucitajImena(String path) {
+        List<Ime> imena = new ArrayList<>();
+        try {
+            File myObj = new File(path);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine().trim().replaceAll(" +", " ");
@@ -41,6 +51,7 @@ public class ImenaReader {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+        return imena;
     }
 
     private static void ucitajPrezimena() {

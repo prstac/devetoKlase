@@ -19,7 +19,19 @@ public class ImeFaker {
     }
 
     public static String getRandomIme() {
-        return imenaReader.imena.get((int)Math.round(Math.random() * (imenaReader.imena.size() - 1 ))).getNaziv();
+        if (Math.random() < 0.5) {
+            return  getRandomMuskoIme();
+        } else {
+            return getRandomZenskoIme();
+        }
+    }
+
+    public static String getRandomMuskoIme() {
+        return imenaReader.muskaImena.get((int)Math.round(Math.random() * (imenaReader.muskaImena.size() - 1 ))).getNaziv();
+    }
+
+    public static String getRandomZenskoIme() {
+        return imenaReader.zenskaImena.get((int)Math.round(Math.random() * (imenaReader.zenskaImena.size() - 1 ))).getNaziv();
     }
 
     public static String getRandomPrezime() {
