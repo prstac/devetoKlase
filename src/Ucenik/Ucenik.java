@@ -1,5 +1,7 @@
 package Ucenik;
 
+import Utils.InfoRowBuilder;
+
 public class Ucenik {
     private String ime;
     private int brojGodina;
@@ -12,12 +14,13 @@ public class Ucenik {
     }
 
     public void ucenikInfo() {
-        String header =
-                String.format("|%-20s|",ime) +
-                        String.format("%10s|", brojGodina) +
-                        String.format("%10s|", String.format("%.2f", prosjek()));
+        InfoRowBuilder infoRowBuilder = new InfoRowBuilder();
+        String header = infoRowBuilder
+                .addColumn(ime, -20)
+                .addColumn(String.valueOf(brojGodina), 10)
+                .addColumn(String.format("%.2f", prosjek()), 10)
+                .getInfoRow();
         System.out.println(header);
-
         //System.out.println("Ime: " + ime + " Dob: " + brojGodina + " prosjek: " + prosjek());
     }
 

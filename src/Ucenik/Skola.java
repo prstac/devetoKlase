@@ -1,6 +1,7 @@
 package Ucenik;
 
 import Imena.ImeFaker;
+import Utils.InfoRowBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,11 +43,13 @@ public class Skola {
     }
 
     public static void uceniciInfo() {
-        String header =
-                String.format("|%-20s|", "Ime") +
-                        String.format("%-10s|","Dob") +
-                        String.format("%-10s|", "Prosjek");
-        header = String.join("_", header.split(" "));
+        InfoRowBuilder infoRowBuilder = new InfoRowBuilder();
+        String header = infoRowBuilder
+                .addColumn("Ime", -20)
+                .addColumn("Dob", -10)
+                .addColumn("Prosjek", -10)
+                .getRowAsHeader();
+
         System.out.println(header);
 
         ucenici.forEach(ucenik -> ucenik.ucenikInfo());
